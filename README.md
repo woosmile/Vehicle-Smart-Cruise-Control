@@ -97,9 +97,9 @@ LiDAR 센서로 차량의 전방, 후방, 우측방, 좌측방의 물체를 감�
 ## 📌 프로젝트 구조
 ```
 Vehicle-Smart-Cruise-Control/
-│── rplidar_sdk/    # Raspberry Pi 코드
-│── Static_Code/    # mobilgene 기반 MPC5606B 코드
-└── README.md       # 프로젝트 설명 파일
+│── rplidar_sdk/            # Raspberry Pi 코드
+│── Static_Code/App_Code    # mobilgene 기반 MPC5606B 코드
+└── README.md               # 프로젝트 설명 파일
 ```
 
 ## 팀 구성원
