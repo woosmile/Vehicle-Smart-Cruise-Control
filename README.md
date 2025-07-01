@@ -62,7 +62,7 @@ LiDAR 센서로 차량의 전방, 후방, 우측방, 좌측방의 물체를 감�
 - LiDAR 센서 SDK 사용
 
 ## 📝 시스템 개발 설계서
-![시스템 구조](https://github.com/user-attachments/assets/ff346763-e87b-4008-b025-5f01713f3482)
+![시스템 구조](https://github.com/user-attachments/assets/257cde3b-0fce-4ef4-a362-8eda7a5f5b3c)
 
 - CAN 통신 DATA
   - Speed(Unsigned int 8bit): 30~150 
