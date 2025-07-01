@@ -36,15 +36,11 @@ LiDAR 센서로 차량의 전방, 후방, 우측방, 좌측방의 물체를 감�
 4. CodeWarrior로 MPC5606B에 펌웨어 업로드
 
 ### Raspberry Pi
-1. Git Clone
-  - git clone https://github.com/woosmile/Vehicle-Smart-Cruise-Control.git
-2. OpenCV 설치
-  - sudo apt update
-  - sudo apt install libopencv-dev
+1. git clone https://github.com/woosmile/Vehicle-Smart-Cruise-Control.git
+2. OpenCV 설치: sudo apt update → sudo apt install libopencv-dev
 4. rplidar_sdk/app/ultra_simple 디렉토리 내에서 make 명령어 실행
 5. rplidar_sdk/output/Linux/Release 디렉토리 이동
-6. 명령어 실행
-  - ./ultra_simple --channel --serial /dev/ttyUSB0 115200
+6. 명령어 실행: ./ultra_simple --channel --serial /dev/ttyUSB0 115200
 
 ## 🛠 하드웨어 구성
 
