@@ -21,7 +21,7 @@ LiDAR 센서로 차량의 전방, 후방, 우측방, 좌측방의 물체를 감�
 - 진동 감지 시 영상 정중앙에 SHOCK! 경고 표시
 
 ### 🖼️ 영상 시뮬레이션 예시
-![동작캡처](https://github.com/user-attachments/assets/cbc22867-030c-4afa-9643-d53ba5e41c45)
+![영상 시뮬레이션](https://github.com/user-attachments/assets/cbc22867-030c-4afa-9643-d53ba5e41c45)
 
 - 차량 주행속도: 80[km/h]
 - 감지 방향: LEFT(우측방)
@@ -47,7 +47,7 @@ LiDAR 센서로 차량의 전방, 후방, 우측방, 좌측방의 물체를 감�
 - 서보모터: SG90-HV
 - 진동감지 센서: SW-420
 
-### Raspberry Pi
+### Raspberry Pi 5
 - LiDAR 센서: 슬램텍 RPLIDAR A1M8
 
 ## 💻 소프트웨어 구성
@@ -56,17 +56,32 @@ LiDAR 센서로 차량의 전방, 후방, 우측방, 좌측방의 물체를 감�
 - 사용언어: C
 - Classic AUTOSAR 기반 소프트웨어 플랫폼 mobilgene 사용
 
-### Raspberry Pi
+### Raspberry Pi 5
 - 사용언어: C, C++
 - 영상 시뮬레이션: OpenCV 라이브러리
 - LiDAR 센서 SDK 사용
 
 ## 📝 시스템 개발 설계서
-
+![시스템 구조](https://github.com/user-attachments/assets/ff346763-e87b-4008-b025-5f01713f3482)
 
 ### MPC5606B: ASW 구조
-
+![ASW_구조](https://github.com/user-attachments/assets/ff46f5f7-afb3-47a6-b81e-080679cb2016)
 
 ### Rasperry Pi
+![RaspberryPi](https://github.com/user-attachments/assets/a4af27e6-e4c8-4fbd-95d8-8211717c13fb)
 
+## 📌 프로젝트 구조
+```
+Vehicle-Smart-Cruise-Control/
+│── rplidar_sdk/    # Raspberry Pi 코드
+│── Static_Code/    # mobilgene 기반 MPC5606B 코드
+└── README.md       # 프로젝트 설명 파일
+```
+
+## 팀 구성원
+
+| 이름 | GitHub |
+|------|--------|
+| 옥창희 | [@okchangheeok](https://github.com/okchangheeok) |
+| 김우성 | [@woosmile](https://github.com/woosmile) |
 
