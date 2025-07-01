@@ -65,10 +65,10 @@ LiDAR 센서로 차량의 전방, 후방, 우측방, 좌측방의 물체를 감�
 ![시스템 구조](https://github.com/user-attachments/assets/ff346763-e87b-4008-b025-5f01713f3482)
 
 ### MPC5606B: ASW 구조
-![ASW_구조](https://github.com/user-attachments/assets/ff46f5f7-afb3-47a6-b81e-080679cb2016)
+![ASW+CANDB](https://github.com/user-attachments/assets/9b075e4d-1873-4eb7-84a6-64ebf4e5e6c2)
 
 ### Rasperry Pi
-![RaspberryPi](https://github.com/user-attachments/assets/a4af27e6-e4c8-4fbd-95d8-8211717c13fb)
+![RaspberryPi](https://github.com/user-attachments/assets/4ad1eddd-aa5b-4328-a9e7-992f6319691a)
 
 ## 📌 프로젝트 구조
 ```
