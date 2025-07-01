@@ -23,6 +23,10 @@ LiDAR 센서로 차량의 전방, 후방, 우측방, 좌측방의 물체를 감�
 ### 🖼️ 영상 시뮬레이션 예시
 ![동작캡처](https://github.com/user-attachments/assets/cbc22867-030c-4afa-9643-d53ba5e41c45)
 
+- 차량 주행속도: 80[km/h]
+- 감지 방향: LEFT(우측방)
+- 차량에 충돌이 감지되어 SHOCK! 경고 표시
+
 ## 🚀 실행 방법
 
 ### MPC5606B
