@@ -64,11 +64,35 @@ LiDAR 센서로 차량의 전방, 후방, 우측방, 좌측방의 물체를 감�
 ## 📝 시스템 개발 설계서
 ![시스템 구조](https://github.com/user-attachments/assets/ff346763-e87b-4008-b025-5f01713f3482)
 
+- CAN 통신 DATA
+  - Speed(Unsigned int 8bit): 30~150 
+  - Direction(Unsigned int 8bit): 0(물체감지X), 1(전방), 2(우측방), 3(후방), 4(좌측방)
+  - Shock(1bit): 0(진동감지X), 1(진동감지O)
+
 ### MPC5606B: ASW 구조
 ![ASW+CANDB](https://github.com/user-attachments/assets/9b075e4d-1873-4eb7-84a6-64ebf4e5e6c2)
 
+- ECU1_Msg_RP(CAN ID: 0x06)
+  - Sig1(Dir): 라즈베리파이가 보낸 감지방향 값 그대로 송신(Feedback)
+  - Sig2(Speed): 라즈베리파이가 보낸 차량속도 값 그대로 송신(Feedback)
+  - Sig3(Shock): 진동감지 센서 값 송신
+
+- ECU2_Msg_Dir(CNA ID: 0x07)
+  - Sig1(Dir): 라즈베리파이가 보낸 감지방향 값 수신
+  - Sig2(Speed): 라즈베리파이가 보낸 속도 값 수신
+
 ### Rasperry Pi
 ![RaspberryPi](https://github.com/user-attachments/assets/4ad1eddd-aa5b-4328-a9e7-992f6319691a)
+
+- Main Thread
+  - 차량 속도 값에 따라서 영상 20장 Sequence의 Delay 조절
+  - 물체 감지 방향 표시
+  - 진동 감지 경고창 표시
+- LiDAR + CAN Send Thread
+  - LiDAR 센서가 1frame 당 획득하는 8192개의 감지된 물체의 각도 및 거리값 처리
+  - 물체 감지 방향, 차량 속도 값을 CAN ID 7번으로 송신
+- CAN Receive Thread
+  - MPC5606B에서 CAN ID 6번으로 보낸 진동감지 값 수신
 
 ## 📌 프로젝트 구조
 ```
