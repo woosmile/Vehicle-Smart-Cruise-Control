@@ -1,6 +1,12 @@
 # Vehicle Smart Cruise Control
 LiDAR 센서로 차량의 전방, 후방, 우측방, 좌측방의 물체를 감지하여 차량의 속도를 자동으로 조절하고 감지 방향을 경고하는 **차량 스마트 크루즈 컨트롤** 입니다.  
-라즈베리 파이로 LiDAR 센서의 구동 및 영상 시뮬레이션을 구현했고 Classic AUTOSAR 기반으로 모터, LED, 진동 감지 센서를 제어하는 MPC5606B의 펌웨어를 개발했습니다.
+라즈베리 파이로 LiDAR 센서의 구동 및 영상 시뮬레이션을 구현했고 **Classic AUTOSAR** 기반의 mobilgene으로 모터, LED, 진동 감지 센서를 제어하는 MPC5606B의 펌웨어를 개발했습니다.
+두 장치는 **CAN 통신**을 통해 주행 속도, 감지 방향, 충돌 여부 등의 정보를 실시간으로 송수신하며 서로 연동됩니다.
+
+## 🎬 시연 영상
+[![영상 보기](https://img.youtube.com/vi/Ru0YQGLefFo/0.jpg)](https://youtu.be/Ru0YQGLefFo)
+
+👉 이미지를 클릭하면 유튜브 시연 영상으로 이동합니다.
 
 ## 📌 주요 기능
 - LiDAR 센서 기준 70cm 반경의 모든 방향(0~360°)에서 물체의 위치 및 거리 감지
@@ -20,7 +26,7 @@ LiDAR 센서로 차량의 전방, 후방, 우측방, 좌측방의 물체를 감�
 ### 💥 충돌 감지
 - 진동 감지 시 영상 정중앙에 SHOCK! 경고 표시
 
-### 🖼️ 영상 시뮬레이션 예시
+### 🖼️ 영상 시뮬레이션 예시 이미지
 ![영상 시뮬레이션](https://github.com/user-attachments/assets/cbc22867-030c-4afa-9643-d53ba5e41c45)
 
 - 차량 주행속도: 80[km/h]
@@ -30,7 +36,7 @@ LiDAR 센서로 차량의 전방, 후방, 우측방, 좌측방의 물체를 감�
 ## 🚀 실행 방법
 
 ### MPC5606B
-1. mobilgene으로 BSW, ASW 생성
+1. mobilgene으로 BSW, ASW 생성(아래 ASW 구조 참고)
 2. Static_Code/App_Code 디렉토리 내 .c 파일 복사
 3. Build 진행 후 .elf 파일 확인
 4. CodeWarrior로 MPC5606B에 펌웨어 업로드
@@ -69,7 +75,7 @@ LiDAR 센서로 차량의 전방, 후방, 우측방, 좌측방의 물체를 감�
 - CAN 통신 DATA
   - Speed(Unsigned int 8bit): 30~150 
   - Direction(Unsigned int 8bit): 0(물체감지X), 1(전방), 2(우측방), 3(후방), 4(좌측방)
-  - Shock(1bit): 0(진동감지X), 1(진동감지O)
+  - Shock(boolean 1bit): 0(진동감지X), 1(진동감지O)
 
 ### MPC5606B: ASW 구조
 ![ASW+CANDB](https://github.com/user-attachments/assets/9b075e4d-1873-4eb7-84a6-64ebf4e5e6c2)
