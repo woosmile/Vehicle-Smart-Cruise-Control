@@ -1,6 +1,6 @@
 # Vehicle Smart Cruise Control
 LiDAR 센서로 차량의 전방, 후방, 우측방, 좌측방의 물체를 감지하여 차량의 속도를 자동으로 조절하고 감지 방향을 경고하는 **차량 스마트 크루즈 컨트롤** 입니다.  
-라즈베리 파이로 LiDAR 센서의 구동 및 영상 시뮬레이션을 구현했고 **Classic AUTOSAR** 기반의 mobilgene으로 모터, LED, 진동 감지 센서를 제어하는 MPC5606B의 펌웨어를 개발했습니다.
+라즈베리 파이로 LiDAR 센서의 구동 및 영상 시뮬레이션을 구현했고 **Classic AUTOSAR** 기반의 mobilgene으로 모터, LED, 진동 감지 센서를 제어하는 MPC5606B의 펌웨어를 개발했습니다.  
 두 장치는 **CAN 통신**을 통해 주행 속도, 감지 방향, 충돌 여부 등의 정보를 실시간으로 송수신하며 서로 연동됩니다.
 
 ## 🎬 시연 영상
@@ -42,7 +42,7 @@ LiDAR 센서로 차량의 전방, 후방, 우측방, 좌측방의 물체를 감�
 4. CodeWarrior로 MPC5606B에 펌웨어 업로드
 
 ### Raspberry Pi
-1. git clone https://github.com/woosmile/Vehicle-Smart-Cruise-Control.git
+1. git clone https://github.com/woosmile/mobilgene_SmartCruiseControl.git
 2. OpenCV 설치: sudo apt update → sudo apt install libopencv-dev
 4. rplidar_sdk/app/ultra_simple 디렉토리 내에서 make 명령어 실행
 5. rplidar_sdk/output/Linux/Release 디렉토리 이동
@@ -90,6 +90,7 @@ LiDAR 센서로 차량의 전방, 후방, 우측방, 좌측방의 물체를 감�
   - Sig2(Speed): 라즈베리파이가 보낸 속도 값 수신
 
 ### Rasperry Pi
+#### rplidar_sdk/app/ultra_simple/main.c
 ![RaspberryPi](https://github.com/user-attachments/assets/4ad1eddd-aa5b-4328-a9e7-992f6319691a)
 
 - Main Thread
